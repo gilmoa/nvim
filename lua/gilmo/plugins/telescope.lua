@@ -12,5 +12,9 @@ return {
 		vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Telescope keymaps" })
 		vim.keymap.set("n", "<leader>fw", builtin.grep_string, { desc = "Telescope current word" })
 		vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Telescope diagnostics" })
+
+		vim.keymap.set("n", "<leader>fc", function()
+			builtin.find_files({ cwd = vim.fn.stdpath("config") })
+		end, { desc = "Telescone Neovim config files" })
 	end,
 }
